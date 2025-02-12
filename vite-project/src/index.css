@@ -1,0 +1,28 @@
+
+body {
+    background-image: url(https://images8.alphacoders.com/131/thumb-1920-1310791.png);
+    height: 100%;
+  }
+  
+  #root {
+    height: 100%;
+  }
+
+  #inputID::placeholder {
+    color: red;
+    text-align: center;
+    
+  }
+
+  .flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.d-flex {
+    display: flex;
+}
+h1 {
+    font-weight: bolder;
+    color: black;
+}
