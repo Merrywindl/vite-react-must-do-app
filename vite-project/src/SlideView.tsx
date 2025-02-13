@@ -3,6 +3,7 @@ import thumbnailImage from "./assets/Suzume.jpg"
 import thumbnailImage2 from "./assets/weatheringwithyou.jpg"
 import thumbnailImage3 from "./assets/yourname.jpg"
 import thumbnailImage4 from "./assets/COMING-SOON-.jpg"
+import { useState } from "react"
 
 const testSlides = [
     {
@@ -42,10 +43,20 @@ const testSlides = [
 
 ]
 
-export default function () {
+export default function SlideView() {
+
+    const [selectedSlideId, setSelectedSlideId] = useState(3)
+
+    const handleSlideClick = (id: number) => {
+        setSelectedSlideId(id)
+        
+    }
+
+
     return (
     <div className="border-end border-black border-5  max w-100 d-flex mr-sm-auto  bg-light bg-opacity-25 flex-wrap">
-        { testSlides.map( s => <SlideThumbnail key={s.id}slide ={s}/> )}
+        { testSlides.map( s => <SlideThumbnail key={s.id}slide ={s} onSelected={handleSlideClick} isSelected={s.id === selectedSlideId}/> )}
+        
         
         </div>
     )
