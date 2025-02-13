@@ -1,51 +1,19 @@
 import SlideThumbnail from "./SlideThumbnail"
-import thumbnailImage from "./assets/Suzume.jpg"
-import thumbnailImage2 from "./assets/weatheringwithyou.jpg"
-import thumbnailImage3 from "./assets/yourname.jpg"
-import thumbnailImage4 from "./assets/COMING-SOON-.jpg"
-import { useState } from "react"
 
-const testSlides = [
-    {
-        id:0,        
-        text: "Suzume",
-        image: thumbnailImage
 
-    },
-    {
-        id:1,        
-        text:"Weathering With You",
-        image: thumbnailImage2
 
-    },
-    {
-        id:2,        
-        text:"Your Name",
-        image: thumbnailImage3
 
-    },
-    {
-        id:3,        
-        text:"Coming Soon",
-        image: thumbnailImage4
-    },
-    {
-        id:4,        
-        text:"Coming Soon",
-        image: thumbnailImage4
-    },
-    {
-        id:5,        
-        text:"Coming Soon",
-        image: thumbnailImage4
+type SidebarProps = {
+        slides: Array<{id: number, text: string, image: string}>
+        selectedSlideId: number
+        setSelectedSlideId: (newValue: number) => void
     }
+
+export default function SlideView({slides, selectedSlideId, setSelectedSlideId} : SidebarProps) {
+    
     
 
-]
-
-export default function SlideView() {
-
-    const [selectedSlideId, setSelectedSlideId] = useState(3)
+    
 
     const handleSlideClick = (id: number) => {
         setSelectedSlideId(id)
@@ -54,8 +22,8 @@ export default function SlideView() {
 
 
     return (
-    <div className="border-end border-black border-5  max w-100 d-flex mr-sm-auto  bg-light bg-opacity-25 flex-wrap">
-        { testSlides.map( s => <SlideThumbnail key={s.id}slide ={s} onSelected={handleSlideClick} isSelected={s.id === selectedSlideId}/> )}
+    <div style={{ maxHeight: '80rem',overflowY: 'scroll', height: '50rem' }} className="border-end border-black border-5  max w-100 d-flex mr-sm-auto  bg-light bg-opacity-25 flex-wrap ">
+        { slides.map( s => <SlideThumbnail key={s.id}slide ={s} onSelected={handleSlideClick} isSelected={s.id === selectedSlideId}/> )}
         
         
         </div>
