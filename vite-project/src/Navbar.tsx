@@ -17,7 +17,7 @@ export default function Navbar({ changeBackgroundImage }: NavbarProps) {
 
   const handleCloseBackgroundModal = () => setIsBackgroundModalOpen(false);
   const handleCloseTextColorModal = () => setTextColorModalOpen(false);
-  const [fontColor, setFontColor] = useState("black")
+  const [, setFontColor] = useState("black")
 
   return (
     <div className="bg-transparent p-3 border border-black border-5 d-flex justify-content-center w-100">
