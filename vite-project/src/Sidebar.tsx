@@ -2,7 +2,11 @@ import { useState } from "react"
 
 
 
-export default function Sidebar() {
+type SidebarProps = {
+    addBlankSlide: () => void
+}
+
+export default function Sidebar({addBlankSlide} : SidebarProps) {
     const [isExpanded, setIsExpanded] = useState(true)
 
     const handleButtonClick = () => {
@@ -25,7 +29,7 @@ export default function Sidebar() {
                             <input className="max w-100 border border-black border border-5 p-2 bg-light bg-opacity-25 font-weight-bold" type="text" id="inputID" placeholder="Coming Soon"/>
                         </form>
                         
-                        <button className="btn btn-primary border border-black border-5 max w-100">
+                        <button className="btn btn-primary border border-black border-5 max w-100" onClick={addBlankSlide}>
                             Enter</button>
                         
                     </div>

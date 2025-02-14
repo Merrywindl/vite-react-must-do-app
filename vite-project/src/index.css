@@ -1,8 +1,5 @@
 
-body {
-    background-image: url(https://images8.alphacoders.com/131/thumb-1920-1310791.png) !important;
-    background-attachment: fixed;
-  }
+
   
   #root {
     height: 100%;
@@ -25,4 +22,26 @@ body {
 h1 {
     font-weight: bolder;
     color: black;
+}
+
+ .modal-content {
+  background-color: grey;
+}
+
+.modal-backdrop {
+  background: gray;
+  
+}
+
+.modal-content {
+  align-items: center;
+  
+}
+
+.modal-body >div {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -18,10 +18,11 @@ export default function Rightinfobar({slide} : InfoBarProps) {
         <>
             {isExpanded ? (
                 <div className=" border-black border-end border-5 bg-transparent p-5 d-flex flex-column vh-100 max w-75">
-                    <div>
-                          {slide?.story}                     
-                    </div>
+                    
                     <h1>Please excuse our dust</h1>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <h2>{slide?.story} </h2>                    
+                        </div>
                     
                     </div>
             )   : null}
